@@ -1,5 +1,20 @@
 This file provides guidance to AI agents when working with code in this repository.
 
+## Session Memory Protocol
+
+At the START of every session:
+1. Read `runbook/README.md`
+2. Read the most recent file in `runbook/session-logs/`
+3. Read `runbook/references/open-decisions.md`
+
+At the END of every session (when user says "save session" or before closing):
+1. Write a new session log to `runbook/session-logs/YYYY-MM-DD-N.md` covering what was done, issues found, decisions made, and current state
+2. Update `runbook/references/open-decisions.md` if anything was resolved or new decisions came up
+3. Push to the repo:
+```bash
+cd /tmp/so101-clean && git add runbook/ && git commit -m "Session log YYYY-MM-DD" && git push origin main
+```
+
 > **User-facing help → [`AGENT_GUIDE.md`](./AGENT_GUIDE.md)** (SO-101 setup, recording, picking a policy, training duration, eval — with copy-pasteable commands).
 
 ## Project Overview
